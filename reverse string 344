@@ -1,0 +1,64 @@
+//basic idea of swapping using a temp variable as c,
+    int a=5, b=10, c;
+
+    c = a;
+    a = b;
+    b = c;
+    
+    
+****************************************************************
+
+class Solution {
+public:
+    void reverseString(vector<char>& s) {
+        int n = s.size(); 
+    int st=0, e=n-1;
+        while(st<e){
+            char temp = s[st];
+            s[st]= s[e];
+            s[e]= s[temp];
+            st++;
+            e--;
+        }
+        
+    }
+};
+
+
+***************************************************************
+
+
+          char temp = s[st];
+            s[st]= s[e];
+            s[e]= s[temp];
+            
+            
+   instead we can use swap function in place of the 3 lines
+   
+   ***************************************************************
+   
+   class Solution {
+public:
+    void reverseString(vector<char>& s) {
+        int n = s.size(); 
+    int start=0, end=n-1;
+        while(start<end){
+           swap(s[start],s[end]);
+            start++;
+            end--;
+        }
+        
+    }
+};
+   
+   
+   ***************************************************
+   
+   class Solution {
+public:
+    void reverseString(vector<char>& s) {
+   reverse(s.begin(),s.end());
+        
+    }
+};
+   
