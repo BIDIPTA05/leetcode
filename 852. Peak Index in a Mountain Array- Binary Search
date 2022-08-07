@@ -1,0 +1,20 @@
+class Solution {
+public:
+    int peakIndexInMountainArray(vector<int> &arr) {
+        int s=0;
+        int e=arr.size()-1;
+		// we are using s<e instead of s<=e bcoz we'll aready find the answer so we don't need to any further comaprisons
+        while(s<e) {
+            int mid = s + (e-s)/2;
+			// if value lies in left part then we need to see in the right part, since peak will lie somewhere in the right
+            if(arr[mid]<arr[mid+1]) 
+                s=mid+1;
+			// Now, our peak lies in the right, so we will traverse the right part, we have used e=mid instead of e=mid-1, bcoz since this is else condition our answer might lie on mid	
+            else
+                e=mid;
+        }
+		// we'll return s instead of  mid bcoz our answer will lie on s rather than mid
+		//It will be more clearer if you dry run it
+        return s;
+    }
+};
