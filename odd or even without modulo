@@ -1,0 +1,21 @@
+
+// even or odd
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int n;
+    cout << "Enter the value of n - ";
+    cin >> n;
+    int x = ((n/2)*2);
+    if(n==0){
+        cout << "invalid input";
+    }
+    else if(x==n){
+        cout << "even";
+    }
+    else{
+        cout << "odd";
+    }
+}
