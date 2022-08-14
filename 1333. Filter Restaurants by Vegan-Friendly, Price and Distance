@@ -1,0 +1,30 @@
+class Solution {
+public:
+    vector<int> filterRestaurants(vector<vector<int>>& r, int vf, int mp, int md) {
+        vector <int> ans;
+        // storing the restraunts
+        vector <pair <int, int>> temp;
+        
+        //filtering the restraunts
+        for(auto y : r){
+            if(((vf==1 && y[2]==1) || (vf==0)) && y[3]<=mp && y[4]<=md){
+                temp.push_back({y[1],y[0]});
+            }
+            
+        }
+        
+        //sorting the captured values of the pair 
+        sort(temp.begin(),temp.end());
+        
+        //reversing the pair for the highest rating
+        reverse(temp.begin(),temp.end());
+        
+        //storing the restraunt in a vector,
+        for(auto x : temp){
+            ans.push_back(x.second);
+        }
+        
+        
+               return ans;
+    }
+};
