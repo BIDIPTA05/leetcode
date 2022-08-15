@@ -1,0 +1,32 @@
+class Solution {
+public:
+    bool isPalindrome(string s) {
+        int left = 0, right = s.size()-1;
+        
+        while(left < right) {
+            if(ispunct(s[left]) || s[left] == ' '){ // Checking left element is having any symbols, if yes increment left.
+                left++;
+                continue;
+            } 
+            else if(ispunct(s[right]) || s[right] == ' '){ // Checking right element is having any symbols, if yes decrement right.
+                right--;
+                continue;
+            }
+            else if(tolower(s[left]) != tolower(s[right])){ 
+                // If left char element is not equal to right char element return false. 
+                // Because it is not a palindrome.
+                
+                return false;
+            }
+            else { 
+                // If if(ispunct(s[left])) and else-if(ispunct(s[right])) check failed, then the current left and right are not symbols. 
+                // If (tolower(s[left]) != tolower(s[right])) also failed, the current left and right char are same.
+                // So, we are still in a palindrome assumption. Just increment left and decrement right.
+                
+                left++;
+                right--;
+            }
+        }
+        return true;
+    }
+};
