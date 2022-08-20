@@ -1,0 +1,20 @@
+class Solution {
+public:
+    int getSum(int a, int b) {
+        
+        //can also be solved using bit manipulation
+        
+        
+     if(b<0)
+     {
+        int c = b * -1;
+        for(int i=c;i>0;i--)
+        a--;
+     }
+        
+         for (int i = 1; i <= b; i++)
+            
+        a++;
+    return a;
+    }
+};
