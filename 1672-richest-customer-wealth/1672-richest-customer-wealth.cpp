@@ -4,14 +4,21 @@ public:
         int a = accounts.size();
         int b = accounts[0].size();
         int sum;
-        int maxi= INT_MIN;
+        vector <int> ans;
+       // int maxi= INT_MIN;
         for(int i =0; i< a;i++){
           sum =0;
             for(int j=0;j< b; j++){
                 sum += accounts[i][j];
+                
             }
-            maxi = max(sum,maxi);
+            ans.push_back(sum);
+          //  maxi = max(sum,maxi);
         }
-        return maxi;
+        int answer = *max_element(ans.begin(),ans.end());
+        // for(auto x : ans){
+        //     cout<<x<<" ";
+        // }
+        return answer;
     }
 };
