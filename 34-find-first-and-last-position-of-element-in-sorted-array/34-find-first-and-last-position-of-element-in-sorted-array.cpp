@@ -7,7 +7,7 @@ public:
         int low=0;
         int high=n-1;
         int fr =-1;
-     
+        int sc =-1;
         if(n==0){
             return {-1,-1};
         }
@@ -29,13 +29,13 @@ public:
         
              low=0;
              high=n-1;
-             fr =-1;
+             
      
         
             while(low<=high){
             int mid = low + (high-low)/2;
             if(nums[mid]==target){
-            fr = mid;
+            sc = mid;
             low = mid+1;
             }
             else if(nums[mid]<target){
@@ -45,7 +45,7 @@ public:
                 high = mid-1;
             }
             }
-            ans.push_back(fr);
+            ans.push_back(sc);
         
         return ans;
     };
