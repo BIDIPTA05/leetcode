@@ -4,7 +4,7 @@ public:
         int n = s.size();
         int i =0;
         stack <char> st;
-        string ans = "";
+        string ans;
         
         while(i<n){
             if(st.empty() || st.top()!=s[i])
