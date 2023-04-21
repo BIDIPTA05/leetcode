@@ -18,8 +18,8 @@ public:
            }
         //if the element is 2
             else if(nums[mid]==2){
-                swap(nums[mid],nums[high]);
-                high--;
+                swap(nums[mid],nums[high--]);
+                
                 }
         }
         
